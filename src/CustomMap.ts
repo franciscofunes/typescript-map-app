@@ -11,7 +11,16 @@ export class CustomMap {
     });
   }
 
-  addUserMarker() {}
+  // bad code example
+  addUserMarker(user: User): void {
+    new google.maps.Marker({
+      map: this.googleMap,
+      position: {
+        lat: user.location.lat,
+        lng: user.location.lng,
+      },
+    });
+  }
 
-  addCompanyMarker() {}
+  addCompanyMarker(company: Company): void {}
 }
